@@ -1,0 +1,8 @@
+[33m8462505[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m B Mgit branch -M main git pull origin main --allow-unrelated-histories git push -u origin mainerge branch 'main' of https://github.com/MilaHlungulu/Mary-s-Community-Center-Website
+[33m5205659[m clean upload
+[33m84bdd90[m Add files via upload
+[33m09bdc8f[m Create CNAME
+[33mbbfc526[m Move CSS and JS to root for GitHub Pages
+[33m7e0a55e[m Move index.html to root for GitHub Pages
+[33m20eea92[m Renamed main HTML file to index.html for GitHub Pages
+[33m66ef702[m Initial commit

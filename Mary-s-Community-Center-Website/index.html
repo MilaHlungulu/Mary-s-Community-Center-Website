@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary's Community Centre</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="h-full">
+    <div class="w-24 h-1 mx-auto mb-10 rounded-full bg-gradient-to-r from-pink-400 to-green-400"></div>
+<div id="app-wrapper" class="w-full min-h-screen">style="background: linear-gradient(135deg, #FDF8F5 0%, #F8E1E7 50%, #D4E7D4 100%);">
+
+      <!-- Floating Orbs Background -->
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+
+      <!-- Floating Petals -->
+      <div class="petal petal-1"></div>
+      <div class="petal petal-2"></div>
+      <div class="petal petal-3"></div>
+      <div class="petal petal-4"></div>
+      <div class="petal petal-5"></div>
+      <div class="petal petal-6"></div>
+
+      <!-- Sparkles -->
+      <div class="sparkle sparkle-1"></div>
+      <div class="sparkle sparkle-2"></div>
+      <div class="sparkle sparkle-3"></div>
+      <div class="sparkle sparkle-4"></div>
+      <div class="sparkle sparkle-5"></div>
+
+      <!-- Navigation -->
+      <nav class="glass-nav fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+          <!-- Logo -->
+          <div class="logo-container flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <img src="logo.jpeg" alt="Mary's Community Centre Logo" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <div id="logo-text" class="font-display text-xl font-bold text-gray-800">
+                Mary's Community Centre
+              </div>
+              <div class="text-xs text-pink-600 font-semibold tracking-widest">
+                EMPOWERING COMMUNITIES
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="desktop-nav hidden md:flex items-center gap-8">
+            <a href="#home"     class="nav-link active" data-section="home">Home</a>
+            <a href="#about"    class="nav-link"        data-section="about">About</a>
+            <a href="#programs" class="nav-link"        data-section="programs">Programs</a>
+            <a href="#team"     class="nav-link"        data-section="team">Team</a>
+            <a href="#contact"  class="nav-link"        data-section="contact">Contact</a>
+          </div>
+
+          <!-- CTA Button (Desktop) -->
+          <button id="nav-cta" class="cta-button hidden md:block">
+            <span class="relative z-10">Get Involved ✨</span>
+          </button>
+
+          <!-- Hamburger Menu -->
+          <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#home"     class="mobile-nav-link" data-section="home"     onclick="toggleMobileMenu()">Home</a>
+        <a href="#about"    class="mobile-nav-link" data-section="about"    onclick="toggleMobileMenu()">About</a>
+        <a href="#programs" class="mobile-nav-link" data-section="programs" onclick="toggleMobileMenu()">Programs</a>
+        <a href="#team"     class="mobile-nav-link" data-section="team"     onclick="toggleMobileMenu()">Team</a>
+        <a href="#contact"  class="mobile-nav-link" data-section="contact"  onclick="toggleMobileMenu()">Contact</a>
+        <button class="cta-button mt-4">
+          <span class="relative z-10">Get Involved ✨</span>
+        </button>
+      </div>
+
+      <!-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════ -->
+      <main class="relative min-h-screen flex items-center justify-center px-6 pt-24" id="home">
+        <div class="text-center max-w-4xl mx-auto">
+
+          <!-- Decorative tagline -->
+          <div class="flex items-center justify-center gap-4 mb-8 hero-title">
+            <div class="deco-line"></div>
+            <span class="hero-tagline text-sm uppercase tracking-widest text-gray-500 font-medium">Empowering Communities Since 2000</span>
+            <div class="deco-line"></div>
+          </div>
+
+          <!-- Main Title -->
+          <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-gray-800 mb-6 hero-title leading-tight">
+            Mary's
+            <span class="block bg-gradient-to-r from-pink-400 via-rose-400 to-green-400 bg-clip-text text-transparent">
+              Community Centre
+            </span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p id="hero-subtitle" class="hero-subtitle text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Empowering vulnerable communities across South Africa through compassionate care, innovative programs, and unwavering dedication to human dignity since 2000.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button id="hero-cta" class="cta-button text-lg px-8 py-4">
+              <span class="relative z-10">Get Involved ✨</span>
+            </button>
+            <a href="#about" class="group flex items-center gap-2 text-gray-600 hover:text-pink-500 transition-colors">
+              <span class="font-medium">Learn Our Story</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+          <div class="flex flex-col items-center gap-2 text-gray-400">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+      </main>
+
+      <!-- ═══════════════════════════════ ABOUT SECTION ═══════════════════════════════ -->
+      <section class="relative py-24 px-6 bg-white" id="about">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Mary's Community Centre</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Learn about our mission, history, and the impact we've made since 2000</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 class="font-display text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Mary's Community Centre was founded in 2000 and registered as a non-profit organization (NPO 028-418) in 2003.
+                It was established by women affected by HIV/AIDS to provide home-based care for the chronically ill and to address stigma and discrimination.
+              </p>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Over time, our programs have grown to include TB DOT support, tracing of patients who default on medication, and advocacy with the Department of Health.
+                We adapt continually to meet the evolving needs of our community.
+              </p>
+              <div class="space-y-3 mb-6">
+                <p class="text-gray-700"><strong class="text-pink-600">Vision:</strong> Strengthening community action to address HIV stigma among young people, vulnerable, and key populations.</p>
+                <p class="text-gray-700"><strong class="text-pink-600">Mission:</strong> Achieving a free HIV-positive country through increased HIV counselling and testing.</p>
+                <p class="text-gray-700"><strong class="text-pink-600">Values:</strong> Honesty, Transparency, Collaboration, People-Oriented, Creative, Trustworthy.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="feature-card text-center">
+                <div class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent mb-2">23+</div>
+                <p class="text-gray-600 font-semibold">Years of Service</p>
+              </div>
+              <div class="feature-card text-center">
+                <div class="text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2">8</div>
+                <p class="text-gray-600 font-semibold">Key Programs</p>
+              </div>
+              <div class="feature-card text-center">
+                <div class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-green-400 bg-clip-text text-transparent mb-2">1000s</div>
+                <p class="text-gray-600 font-semibold">Lives Impacted</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════ PROGRAMS SECTION ═══════════════════════════════ -->
+      <section class="relative py-24 px-6 bg-white" id="programs">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Programs</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">We offer a variety of programs designed to empower individuals and strengthen communities</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">HIV Oral Self-Testing</h3>
+              <p class="text-gray-600 text-sm mb-4">Distribution of 16,000 self-test kits over 7 months with WhatsApp and phone follow-ups.</p>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Door-to-door distribution</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Supported by WHRI</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">❤️</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">HIV Counseling &amp; Testing</h3>
+              <p class="text-gray-600 text-sm">80% of clients linked to same-day CD4 testing and 90% reach viral suppression.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🤝</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">Adherence Club</h3>
+              <p class="text-gray-600 text-sm">Serving adolescents, sex workers, transgender, and MSM groups for 2 years with 99 active members.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">👧</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">Orphans &amp; Vulnerable Children</h3>
+              <p class="text-gray-600 text-sm">Psychosocial support, sports, nutrition, homework, career guidance, and mentoring.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🧓</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">Elderly Wellness Club</h3>
+              <p class="text-gray-600 text-sm">Home visits, caring for the sick, and club wellness activities for senior citizens.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">👨‍👩‍👧‍👦</div>
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-3">Family Re-unification</h3>
+              <p class="text-gray-600 text-sm">Support for homeless, drug users, and refugees through family tracing and skills training.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════ TEAM SECTION ═══════════════════════════════ -->
+      <section class="relative py-24 px-6 bg-white" id="team">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Team</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Meet the dedicated people who make our community center a place of hope</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Naniki Bapela</h3>
+              <p class="text-pink-600 font-semibold mb-1">Director</p>
+              <p class="text-gray-600 text-sm">B.A Social Worker (Since 2003)</p>
+            </div>
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Belina Mhlophe</h3>
+              <p class="text-pink-600 font-semibold mb-1">Supervisor</p>
+              <p class="text-gray-600 text-sm">B.A Social Worker (Since 2018)</p>
+            </div>
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Ziyanda Ndala</h3>
+              <p class="text-pink-600 font-semibold mb-1">Data Capture</p>
+              <p class="text-gray-600 text-sm">(Since 2019)</p>
+            </div>
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Cetrick Kabala</h3>
+              <p class="text-pink-600 font-semibold mb-1">Secretary</p>
+              <p class="text-gray-600 text-sm">II Communication (Since 2019)</p>
+            </div>
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Molalo Makhado</h3>
+              <p class="text-pink-600 font-semibold mb-1">Student Social Worker</p>
+              <p class="text-gray-600 text-sm">Diploma in Nursing (Since 2017)</p>
+            </div>
+
+            <div class="feature-card">
+              <h3 class="font-display text-xl font-semibold text-gray-800 mb-2">Mark Thage</h3>
+              <p class="text-pink-600 font-semibold mb-1">Bookkeeping</p>
+              <p class="text-gray-600 text-sm">BA Honours in Accounting (Since 2017)</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════ CONTACT SECTION ═══════════════════════════════ -->
+      <section class="relative py-24 px-6" id="contact">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Connect with us to learn more about our programs or to get involved</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- Contact Info & Banking -->
+            <div class="space-y-6">
+              <div class="feature-card">
+                <h3 class="font-display text-xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                <div class="space-y-4">
+                  <div class="flex gap-4">
+                    <i class="fas fa-map-marker-alt text-pink-500 text-xl mt-1"></i>
+                    <p class="text-gray-600">Albertina Sisulu Road, Kensington, Johannesburg, 2094, South Africa</p>
+                  </div>
+                  <div class="flex gap-4">
+                    <i class="fas fa-phone text-pink-500 text-xl"></i>
+                    <p class="text-gray-600">072 870 7223</p>
+                  </div>
+                  <div class="flex gap-4">
+                    <i class="fas fa-envelope text-pink-500 text-xl"></i>
+                    <p class="text-gray-600">maryscommunitycentre13@gmail.com</p>
+                  </div>
+                  <div class="flex gap-4">
+                    <i class="fas fa-clock text-pink-500 text-xl"></i>
+                    <p class="text-gray-600">Monday - Friday: 9AM - 5PM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-card">
+                <h3 class="font-display text-xl font-bold text-gray-800 mb-4">Banking Details</h3>
+                <div class="space-y-2 text-sm">
+                  <p><strong class="text-gray-800">Account Holder:</strong> <span class="text-gray-600">Mary's Community Centre</span></p>
+                  <p><strong class="text-gray-800">Bank Name:</strong>       <span class="text-gray-600">First National Bank</span></p>
+                  <p><strong class="text-gray-800">Account Number:</strong>  <span class="text-gray-600">62873726982</span></p>
+                  <p><strong class="text-gray-800">Branch Code:</strong>     <span class="text-gray-600">250205</span></p>
+                  <p><strong class="text-gray-800">SWIFT Code:</strong>      <span class="text-gray-600">FIRNZAJJ</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="feature-card">
+              <h3 class="font-display text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+              <form id="contact-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2" for="name">Your Name</label>
+                  <input class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                         id="name" placeholder="Enter your name" type="text" required>
+                </div>
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2" for="email">Your Email</label>
+                  <input class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                         id="email" placeholder="Enter your email" type="email" required>
+                </div>
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2" for="subject">Subject</label>
+                  <input class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                         id="subject" placeholder="Enter subject" type="text" required>
+                </div>
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2" for="message">Your Message</label>
+                  <textarea class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500 resize-none"
+                            id="message" placeholder="Enter your message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button w-full text-lg">
+                  <span class="relative z-10">Send Message 💌</span>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+      <footer class="relative py-12 px-6 border-t border-pink-200/30">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+            <div>
+              <h3 class="font-display text-lg font-bold text-gray-800 mb-4">Contact Us</h3>
+              <p class="text-gray-600 text-sm mb-2"><i class="fas fa-map-marker-alt text-pink-500 mr-2"></i>Albertina Sisulu Road, Kensington, Johannesburg, 2094</p>
+              <p class="text-gray-600 text-sm mb-2"><i class="fas fa-phone text-pink-500 mr-2"></i>072 870 7223</p>
+              <p class="text-gray-600 text-sm"><i class="fas fa-envelope text-pink-500 mr-2"></i>maryscommunitycentre13@gmail.com</p>
+              <p class="text-gray-600 text-xs mt-4">
+                Company No. 2006/039074/08 NPC<br>
+                NPO Reg No. 208-418-NPO
+              </p>
+            </div>
+
+            <div>
+              <h3 class="font-display text-lg font-bold text-gray-800 mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li><a href="#home"     class="text-gray-600 hover:text-pink-500 transition text-sm">Home</a></li>
+                <li><a href="#about"    class="text-gray-600 hover:text-pink-500 transition text-sm">About</a></li>
+                <li><a href="#programs" class="text-gray-600 hover:text-pink-500 transition text-sm">Programs</a></li>
+                <li><a href="#team"     class="text-gray-600 hover:text-pink-500 transition text-sm">Team</a></li>
+                <li><a href="#contact"  class="text-gray-600 hover:text-pink-500 transition text-sm">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-display text-lg font-bold text-gray-800 mb-4">Follow Us</h3>
+              <p class="text-gray-600 text-sm mb-4">Stay connected with us on social media</p>
+              <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-300 to-green-300 flex items-center justify-center text-white hover:scale-110 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-300 to-green-300 flex items-center justify-center text-white hover:scale-110 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-300 to-green-300 flex items-center justify-center text-white hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-300 to-green-300 flex items-center justify-center text-white hover:scale-110 transition"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="text-center pt-8 border-t border-pink-200/30">
+            <p class="text-gray-600 text-sm">© 2025 Mary's Community Centre. All rights reserved. Made with 💕</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- External scripts -->
+    <script src="main.js"></script>
+  </body>
+</html>
