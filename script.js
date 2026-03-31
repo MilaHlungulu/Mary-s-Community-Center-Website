@@ -1,44 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
-// Navigation functionality
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.section');
-    
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        navLinks.forEach(l => l.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-        
-        this.classList.add('active');
+// const hamburger = document.querySelector(".hamburger");
+// const mobileMenu = document.querySelector(".mobile-menu");
 
-        const sectionId = this.getAttribute('data-section');
-        document.getElementById(sectionId).classList.add('active');
-            
-        if (sectionId === 'home') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+// hamburger.addEventListener("click", () => {
+//   hamburger.classList.toggle("active");
+//   mobileMenu.classList.toggle("active");
+// });
+// // Add this inside your script tag
+// document.addEventListener("DOMContentLoaded", () => {
+//   const navCta = document.getElementById("nav-cta");
+
+//   if (navCta) {
+//     navCta.addEventListener("click", () => {
+//       const contactSection = document.getElementById("contact");
+//       contactSection.scrollIntoView({ behavior: "smooth" });
+//     });
+//   }
+// });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const target = entry.target;
+      const countTo = parseInt(target.getAttribute("data-count"));
+      let current = 0;
+      const increment = countTo / 50; // Adjust speed here
+
+      const updateCount = () => {
+        current += increment;
+        if (current < countTo) {
+          target.innerText = Math.ceil(current) + "+";
+          requestAnimationFrame(updateCount);
         } else {
-            window.scrollTo({
-                top: document.getElementById(sectionId).offsetTop - 80,
-                behavior: 'smooth'
-            });
+          target.innerText = countTo + "+";
         }
-    });
+      };
+      updateCount();
+      observer.unobserve(target); // Only animate once
+    }
+  });
 });
-    
-// Button hover effects
-const buttons = document.querySelectorAll('.btn');
-    
-buttons.forEach(button => {
-    button.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px)';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        });
-    });
-});
+
+document.querySelectorAll(".stat-number").forEach((n) => observer.observe(n));
+
+
