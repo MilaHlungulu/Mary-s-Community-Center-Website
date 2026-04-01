@@ -596,51 +596,81 @@
             </div>
 
             <div class="feature-card h-full">
-              <h3 class="font-display text-2xl font-bold text-gray-800 mb-6">
-                Send Us a Message
-              </h3>
-              <form id="contact-form" class="space-y-4">
-                <div>
-                  <label
-                    class="block text-gray-700 font-semibold mb-2"
-                    for="name"
-                    >Your Name</label
-                  >
-                  <input
-                    class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
-                    id="name"
-                    type="text"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-gray-700 font-semibold mb-2"
-                    for="email"
-                    >Your Email</label
-                  >
-                  <input
-                    class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
-                    id="email"
-                    type="email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-gray-700 font-semibold mb-2"
-                    for="message"
-                    >Your Message</label
-                  >
-                  <textarea
-                    class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500 resize-none"
-                    id="message"
-                    rows="6"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="cta-button w-full text-lg">
-                  <span class="relative z-10">Send Message</span>
+                    <h3 class="font-display text-2xl font-bold text-gray-800 mb-6">
+                      Send Us a Message
+                    </h3>
+
+                    <form id="contact-form" class="space-y-4">
+                      <!-- Subject / Title Field -->
+                      <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="title">Subject</label>
+                        <input
+                          class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                          id="title"
+                          name="title"
+                          type="text"
+                          required
+                        />
+                      </div>
+
+                      <!-- Name Field -->
+                      <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="name">Your Name</label>
+                        <input
+                          class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                          id="name"
+                          name="user_name"
+                          type="text"
+                          required
+                        />
+                      </div>
+
+                      <!-- Email Field -->
+                      <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="email">Your Email</label>
+                        <input
+                          class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500"
+                          id="email"
+                          name="user_email"
+                          type="email"
+                          required
+                        />
+                      </div>
+
+                      <!-- Message Field -->
+                      <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="message">Your Message</label>
+                        <textarea
+                          class="w-full px-4 py-2 rounded-lg bg-white/80 border border-pink-200 focus:outline-none focus:border-pink-500 resize-none"
+                          id="message"
+                          name="message"
+                          rows="6"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <!-- Submit Button -->
+                      <button type="submit" class="cta-button w-full text-lg">
+                        <span class="relative z-10">Send Message</span>
+                      </button>
+                    </form>
+
+                    <!-- EmailJS Script -->
+                    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+                    <script>
+                      emailjs.init("qqcnvk-4II0OkNHRq"); // Replace with your EmailJS public key
+
+                      document.getElementById("contact-form").addEventListener("submit", function(e) {
+                        e.preventDefault();
+
+                        emailjs.sendForm("service_zpejxb4", "template_oucj951", this) // Replace with your IDs
+                          .then(function() {
+                            alert("Message sent successfully!");
+                          }, function(error) {
+                            alert("Failed to send: " + error.text);
+                          });
+                      });
+                    </script>
                 </button>
               </form>
             </div>
